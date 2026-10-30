@@ -71,3 +71,36 @@ export const deleteTask = (id) =>
     method: 'DELETE',
     headers: getAuthHeaders(),
   }).then(handleResponse);
+
+/**
+ * Practical 13: AI API Integration
+ * Securely calls Express backend /api/ai/generate-description
+ * Never calls OpenAI/Gemini directly from browser to protect API keys.
+ */
+export const generateAiDescription = async (title) => {
+  try {
+    const res = await fetch(`${BASE_URL}/api/ai/generate-description`, {
+      method: 'POST',
+      headers: getAuthHeaders(),
+      body: JSON.stringify({ title }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok && res.status !== 429) {
+      return {
+        description: '',
+        fallback: true,
+        message: data?.message || `AI request failed with status ${res.status}`,
+      };
+    }
+
+    return data;
+  } catch (err) {
+    return {
+      description: '',
+      fallback: true,
+      message: err.message || 'AI service unavailable',
+    };
+  }
+};

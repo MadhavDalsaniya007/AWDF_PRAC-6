@@ -20,7 +20,6 @@ taskEvents.on('task-created', (task) => {
     // ── Simulate a slow notification (2-second artificial delay) ──────────
     // This proves the API responded instantly even though the handler
     // takes time.  Remove or reduce for production use.
-    const start = Date.now();
     // Busy-wait substitute: use a real setTimeout to keep the event loop free
     setTimeout(() => {
       console.log('─'.repeat(60));

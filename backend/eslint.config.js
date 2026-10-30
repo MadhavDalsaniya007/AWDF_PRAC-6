@@ -20,7 +20,9 @@ module.exports = [
         afterEach: 'readonly',
         beforeAll: 'readonly',
         afterAll: 'readonly',
-        jest: 'readonly'
+        jest: 'readonly',
+        fetch: 'readonly',
+        AbortController: 'readonly'
       }
     },
     rules: {

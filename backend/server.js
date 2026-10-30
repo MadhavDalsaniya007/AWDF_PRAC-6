@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const taskRoutes = require('./routes/tasks');
 const authRoutes = require('./routes/auth');
+const aiRoutes = require('./routes/ai');
 
 // Practical 10 – register all EventEmitter listeners BEFORE any route
 // could possibly emit an event.  Requiring this file is enough; the
@@ -21,7 +22,7 @@ if (!process.env.JWT_SECRET) {
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://mongodb:27017/taskdb';
+const MONGO_URI = process.env.MONGO_URI || process.env.MONGO_URL || 'mongodb://mongodb:27017/taskdb';
 
 // --- Middleware ---
 app.use(cors());
@@ -30,9 +31,11 @@ app.use(express.json());
 // --- Routes ---
 app.use('/auth', authRoutes);
 app.use('/tasks', taskRoutes);
+app.use('/api/ai', aiRoutes);
+app.use('/ai', aiRoutes);
 
 app.get('/', (req, res) => {
-  res.json({ status: 'Backend running', version: 'PR10' });
+  res.json({ status: 'Backend running', version: 'PR13' });
 });
 
 // --- MongoDB connection + server start ---

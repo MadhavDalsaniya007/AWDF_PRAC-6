@@ -1,7 +1,7 @@
 {
-  "name": "practical-12-task-manager",
+  "name": "practical-13-task-manager",
   "version": "1.0.0",
-  "description": "Practical 12 - CI/CD Pipeline with GitHub Actions",
+  "description": "Practical 13 - AI API Integration into a Web Application",
   "private": true,
   "scripts": {
     "postinstall": "npm --prefix backend install",
