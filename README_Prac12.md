@@ -1,6 +1,6 @@
 # Practical 12: CI/CD Pipeline with GitHub Actions
 
-[![CI Pipeline](https://github.com/<USERNAME>/<REPO_NAME>/actions/workflows/ci.yml/badge.svg)](https://github.com/<USERNAME>/<REPO_NAME>/actions/workflows/ci.yml)
+[![CI Pipeline](https://github.com/MadhavDalsaniya007/AWDF_PRAC-6/actions/workflows/ci.yml/badge.svg)](https://github.com/MadhavDalsaniya007/AWDF_PRAC-6/actions/workflows/ci.yml)
 
 | Field | Details |
 |---|---|
