@@ -113,7 +113,7 @@ Store keys in `.env` inside the `backend/` directory (already ignored by `.gitig
 PORT=5000
 NODE_ENV=development
 JWT_SECRET=your_jwt_secret_here
-MONGO_URI=mongodb://localhost:27017/taskdb
+MONGO_URI=mongodb+srv://24it010_db_user:user123@cluster0.zepgced.mongodb.net/taskdb
 
 # OpenAI API Key (Option A)
 OPENAI_API_KEY=sk-proj-yourOpenAIKeyHere
