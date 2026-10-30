@@ -1,0 +1,10 @@
+const request = require('supertest');
+const app = require('../server');
+
+describe('Deliberately Failing Test (Demonstration for Step 5)', () => {
+  test('Deliberate Failure: GET / should return 999 status code', async () => {
+    const res = await request(app).get('/');
+    // Deliberate error: expecting 999 instead of 200 to simulate a pipeline failure
+    expect(res.statusCode).toBe(999);
+  });
+});
